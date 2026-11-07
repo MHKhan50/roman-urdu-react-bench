@@ -8,6 +8,7 @@ authors:
 version: 1.0.0
 date-released: 2026-11-07
 license: MIT
+doi: 10.5281/zenodo.24044983
 repository-code: "https://github.com/MHKhan50/roman-urdu-react-bench"
 keywords:
   - ReAct

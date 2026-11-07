@@ -1,5 +1,7 @@
 # Roman Urdu ReAct benchmark
 
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.24044983-blue)](https://doi.org/10.5281/zenodo.24044983)
+
 Code, items and results for the paper *Roman Urdu Input Costs Small Local ReAct Agents up to 35 Accuracy Points: A Paired Benchmark on Clinic Questions* (source in [`paper/`](paper/)).
 
 It follows a 12-question pilot ([`react-roman-urdu`](https://github.com/MHKhan50/agentic-ai-research-log/tree/main/react-roman-urdu)), where changing only the
