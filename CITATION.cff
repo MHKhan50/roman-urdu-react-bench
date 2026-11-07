@@ -17,3 +17,15 @@ keywords:
   - multilingual evaluation
   - local LLMs
   - clinical question answering
+preferred-citation:
+  type: article
+  title: "Roman Urdu Input Costs Small Local ReAct Agents up to 35 Accuracy Points: A Paired Benchmark on Clinic Questions"
+  authors:
+    - family-names: Hussain
+      given-names: Muzammal
+      orcid: "https://orcid.org/0009-0001-2570-5686"
+  year: 2026
+  publisher:
+    name: Zenodo
+  doi: 10.5281/zenodo.24045043
+  notes: Preprint

@@ -1,8 +1,9 @@
 # Roman Urdu ReAct benchmark
 
-[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.24044983-blue)](https://doi.org/10.5281/zenodo.24044983)
+[![Preprint](https://img.shields.io/badge/preprint-10.5281%2Fzenodo.24045043-blue)](https://doi.org/10.5281/zenodo.24045043)
+[![Software](https://img.shields.io/badge/software-10.5281%2Fzenodo.24044983-blue)](https://doi.org/10.5281/zenodo.24044983)
 
-Code, items and results for the paper *Roman Urdu Input Costs Small Local ReAct Agents up to 35 Accuracy Points: A Paired Benchmark on Clinic Questions* (source in [`paper/`](paper/)).
+Code, items and results for the paper *Roman Urdu Input Costs Small Local ReAct Agents up to 35 Accuracy Points: A Paired Benchmark on Clinic Questions* (preprint: [doi:10.5281/zenodo.24045043](https://doi.org/10.5281/zenodo.24045043); LaTeX source in [`paper/`](paper/)).
 
 It follows a 12-question pilot ([`react-roman-urdu`](https://github.com/MHKhan50/agentic-ai-research-log/tree/main/react-roman-urdu)), where changing only the
 names moved a small local ReAct agent's Roman Urdu accuracy from 83% to 58% and the errors came from words such as
@@ -100,4 +101,14 @@ My notes on the run are in [`NOTES.md`](NOTES.md).
 - The tools and system prompt are in English in every condition.
 
 ## Citation
-See [`CITATION.cff`](CITATION.cff). Author: Muzammal Hussain ([ORCID 0009-0001-2570-5686](https://orcid.org/0009-0001-2570-5686)). Code: MIT licence.
+```bibtex
+@misc{hussain2026romanurdu,
+  author    = {Hussain, Muzammal},
+  title     = {Roman Urdu Input Costs Small Local {ReAct} Agents up to 35 Accuracy Points: A Paired Benchmark on Clinic Questions},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.24045043},
+  note      = {Preprint}
+}
+```
+Software: [doi:10.5281/zenodo.24044983](https://doi.org/10.5281/zenodo.24044983); see also [`CITATION.cff`](CITATION.cff). Author: Muzammal Hussain ([ORCID 0009-0001-2570-5686](https://orcid.org/0009-0001-2570-5686)). Code: MIT licence.
