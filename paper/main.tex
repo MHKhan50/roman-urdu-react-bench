@@ -112,19 +112,27 @@ T12 who did more & kis ne zyada & 59 & 34 & 31 \\
 
 \paragraph{Protocol pilot.} Our first run sent the system prompt and the whole ReAct transcript as a single user message at every step. Qwen2.5 3B handled this (89.6\% in English, 96 items), but Llama 3.2 3B repeated its first step until the step limit in 93\% of English runs and scored 7.1\% (56 items before we stopped the run). With the same prompts, tools and grading, sending each model step as an assistant turn and each observation as a user turn raised Llama 3.2 3B to 78.1\%. All results above use the separate-turn format for every model; the pilot calls are kept in the repository.
 
+\paragraph{Clinician review.} After the runs, a physiotherapist checked the 48 items of name set A in all three forms against the clinic records. She marked every gold answer correct and both Roman Urdu forms of every item equal in meaning to the English. She judged the 16 items of T03 to T06 (age in and before $N$ years, combined and difference in experience) not to be questions a receptionist or physiotherapist would ask, and marked 7 Roman Urdu items as not natural, all for gender agreement: the masculine \emph{honge} for the three female patients in T03 and \emph{aate hain} for the female therapists in all four T09 items, where \emph{hongi} and \emph{aati hain} are correct. The items were not changed, so all results above use the original wording. The filled review sheet is in the repository.
+
 \section{Discussion}
 For three of four small local models, the same question in Roman Urdu cost a ReAct agent between 22 and 35 percentage points, a quarter to two fifths of its English accuracy, and the losses were concentrated in short phrases that decide the arithmetic or the lookup. This matters for clinical tools because the failure mode is quiet: the agent still calls tools and returns a number. That the Llama models showed no gap when answering directly suggests that the multi-step loop, where a misread word can choose the wrong operator or skip a lookup, is where Roman Urdu does its damage; with four models we cannot say why Qwen2.5 3B was affected in both settings or why Qwen2.5 7B was not affected at all.
 
 The protocol pilot is a warning for agent benchmarks in general: how the loop is presented to a chat model changed one model's English score from 7\% to 78\%, larger than any language effect we measured. Benchmarks should state this choice and, where possible, test both.
 
 \section{Limitations}
-The clinic is fictional and small, with 12 templates written by one person; real users spell Roman Urdu in more ways than our two forms. We tested four small open models with default quantisation, at temperature 0 with one sample per question. Lenient scoring can credit an answer that lists the right number among others; strict scores are within a few points except for Llama 3.2 3B's direct English answers (69.8\% lenient, 57.3\% strict). Three templates were hard even in English. The tools and system prompt were in English in every condition. Two calls were excluded after timeouts.
+The clinic is fictional and small, with 12 templates written by one person; real users spell Roman Urdu in more ways than our two forms. We tested four small open models with default quantisation, at temperature 0 with one sample per question. Lenient scoring can credit an answer that lists the right number among others; strict scores are within a few points except for Llama 3.2 3B's direct English answers (69.8\% lenient, 57.3\% strict). Three templates were hard even in English. The tools and system prompt were in English in every condition. Two calls were excluded after timeouts. Our reviewer judged the four age and experience templates (T03 to T06), which include three of the five largest Roman Urdu drops, unrealistic for a clinic, and found a gender-agreement error in the Roman Urdu of T03 and T09; we cannot separate the effect of that error from the effect of the time and day phrases. One reviewer checked one of the two name sets.
 
 \section{Conclusion}
 Small local ReAct agents that work well in English can lose up to 35 percentage points of accuracy on the same clinic questions in Roman Urdu, mostly on time and combination words, and chat spelling can make this worse. A larger model or, for some models, a Roman Urdu example or a translation step reduces the loss. Anyone deploying such agents for Roman Urdu users should test them in Roman Urdu, with the spellings their users type.
 
+\section*{Acknowledgements}
+We thank Maryam Khalid, physiotherapist, for reviewing the benchmark items.
+
+\section*{Competing interests}
+The reviewer is married to the author.
+
 \section*{Data and code}
-Items, code, tests, every call with its full transcript and the pilot run: \url{https://github.com/MHKhan50/roman-urdu-react-bench}, archived on Zenodo as version 1.0.0 (\href{https://doi.org/10.5281/zenodo.24044983}{doi:10.5281/zenodo.24044983}).
+Items, code, tests, every call with its full transcript, the pilot run and the clinician review sheet: \url{https://github.com/MHKhan50/roman-urdu-react-bench}, archived on Zenodo as version 1.0.0 (\href{https://doi.org/10.5281/zenodo.24044983}{doi:10.5281/zenodo.24044983}).
 
 \bibliographystyle{plainnat}
 \bibliography{refs}

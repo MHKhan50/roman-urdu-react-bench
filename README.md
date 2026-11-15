@@ -93,6 +93,10 @@ ReAct with the English example, Roman Urdu (common spelling) against English on 
 
 My notes on the run are in [`NOTES.md`](NOTES.md).
 
+## Clinician review
+
+A physiotherapist checked the 48 items of name set A after the runs: all expected answers correct and all Roman Urdu forms equal in meaning to the English; 16 items (the age and experience templates T03 to T06) judged not realistic for a clinic; 7 Roman Urdu items with a gender-agreement error (*honge*, *aate hain* for women). Details and the filled sheet: [`clinician-review/`](clinician-review/).
+
 ## Limitations
 - One fictional domain and 12 question types written by one person; real users spell Roman Urdu in more ways.
 - Small open models only, run locally with default quantisation; temperature 0 gives one answer per question.
