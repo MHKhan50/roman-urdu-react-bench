@@ -134,7 +134,7 @@ def figures(acc: pd.DataFrame, tmpl: pd.DataFrame, out: Path) -> None:
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
 
-    colours = {"en": "#1f5f99", "ru": "#c0612b", "ru_var": "#e3a46b"}
+    colours = {"en": "#1F4E9C", "ru": "#C8102E", "ru_var": "#E3A800"}
     models = sorted(acc["model"].unique())
     fig, axes = plt.subplots(1, 2, figsize=(10, 3.6), sharey=True)
     for ax, method in zip(axes, ("direct", "react_en_shot")):
@@ -169,7 +169,7 @@ def figures(acc: pd.DataFrame, tmpl: pd.DataFrame, out: Path) -> None:
     piv = tmpl.assign(gap=tmpl["en"] - tmpl["ru"]).pivot_table(index="template", columns="model", values="gap")
     piv = piv.reindex([t for t in order if t in piv.index])
     fig, ax = plt.subplots(figsize=(1.6 + 1.3 * len(piv.columns), 4.2))
-    im = ax.imshow(100 * piv.to_numpy(dtype=float), cmap="RdBu_r", vmin=-100, vmax=100, aspect="auto")
+    im = ax.imshow(100 * piv.to_numpy(dtype=float), cmap=matplotlib.colors.LinearSegmentedColormap.from_list("house", ["#1F4E9C", "#FFFFFF", "#C8102E"]), vmin=-100, vmax=100, aspect="auto")
     ax.set_xticks(range(len(piv.columns)))
     ax.set_xticklabels(piv.columns, fontsize=8)
     ax.set_yticks(range(len(piv.index)))
