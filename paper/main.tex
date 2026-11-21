@@ -6,14 +6,15 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{xurl}
 \setlength{\emergencystretch}{2em}
-\hypersetup{pdftitle={Roman Urdu Input Costs Small Local ReAct Agents up to 35 Accuracy Points: A Paired Benchmark on Clinic Questions},pdfauthor={Muzammal Hussain}}
+\hypersetup{pdftitle={Roman Urdu Input Costs Small Local ReAct Agents up to 35 Accuracy Points: A Paired Benchmark on Clinic Questions},pdfauthor={Muzammal Hussain and Maryam Khalid}}
 \usepackage{natbib}
 
 \title{Roman Urdu Input Costs Small Local ReAct Agents up to 35 Accuracy Points:\\A Paired Benchmark on Clinic Questions}
-\author{Muzammal Hussain\\
-\small Independent researcher, Glasgow, United Kingdom\\
-\small \href{mailto:muzammal@masmatixinnovations.co.uk}{muzammal@masmatixinnovations.co.uk}\\
-\small ORCID: \href{https://orcid.org/0009-0001-2570-5686}{0009-0001-2570-5686}}
+\author{Muzammal Hussain$^{1}$ \and Maryam Khalid$^{2}$\\[4pt]
+\small $^{1}$Independent researcher, Glasgow, United Kingdom\\
+\small $^{2}$Physiotherapist, Glasgow, United Kingdom\\
+\small Correspondence: \href{mailto:muzammal@masmatixinnovations.co.uk}{muzammal@masmatixinnovations.co.uk}\\
+\small ORCID (M.\ Hussain): \href{https://orcid.org/0009-0001-2570-5686}{0009-0001-2570-5686}}
 \date{\small November 2026}
 
 \begin{document}
@@ -113,7 +114,7 @@ T12 who did more & kis ne zyada & 59 & 34 & 31 \\
 
 \paragraph{Protocol pilot.} Our first run sent the system prompt and the whole ReAct transcript as a single user message at every step. Qwen2.5 3B handled this (89.6\% in English, 96 items), but Llama 3.2 3B repeated its first step until the step limit in 93\% of English runs and scored 7.1\% (56 items before we stopped the run). With the same prompts, tools and grading, sending each model step as an assistant turn and each observation as a user turn raised Llama 3.2 3B to 78.1\%. All results above use the separate-turn format for every model; the pilot calls are kept in the repository.
 
-\paragraph{Clinician review.} After the runs, a physiotherapist checked the 48 items of name set A in all three forms against the clinic records. She marked every gold answer correct and both Roman Urdu forms of every item equal in meaning to the English. She judged the 16 items of T03 to T06 (age in and before $N$ years, combined and difference in experience) not to be questions a receptionist or physiotherapist would ask, and marked 7 Roman Urdu items as not natural, all for gender agreement: the masculine \emph{honge} for the three female patients in T03 and \emph{aate hain} for the female therapists in all four T09 items, where \emph{hongi} and \emph{aati hain} are correct. The items were not changed, so all results above use the original wording. The filled review sheet is in the repository.
+\paragraph{Clinician review.} After the runs, a physiotherapist (M.K.) checked the 48 items of name set A in all three forms against the clinic records. She marked every gold answer correct and both Roman Urdu forms of every item equal in meaning to the English. She judged the 16 items of T03 to T06 (age in and before $N$ years, combined and difference in experience) not to be questions a receptionist or physiotherapist would ask, and marked 7 Roman Urdu items as not natural, all for gender agreement: the masculine \emph{honge} for the three female patients in T03 and \emph{aate hain} for the female therapists in all four T09 items, where \emph{hongi} and \emph{aati hain} are correct. The items were not changed, so all results above use the original wording. The filled review sheet is in the repository.
 
 \section{Discussion}
 For three of four small local models, the same question in Roman Urdu cost a ReAct agent between 22 and 35 percentage points, a quarter to two fifths of its English accuracy, and the losses were concentrated in short phrases that decide the arithmetic or the lookup. This matters for clinical tools because the failure mode is quiet: the agent still calls tools and returns a number. That the Llama models showed no gap when answering directly suggests that the multi-step loop, where a misread word can choose the wrong operator or skip a lookup, is where Roman Urdu does its damage; with four models we cannot say why Qwen2.5 3B was affected in both settings or why Qwen2.5 7B was not affected at all.
@@ -126,11 +127,11 @@ The clinic is fictional and small, with 12 templates written by one person; real
 \section{Conclusion}
 Small local ReAct agents that work well in English can lose up to 35 percentage points of accuracy on the same clinic questions in Roman Urdu, mostly on time and combination words, and chat spelling can make this worse. A larger model or, for some models, a Roman Urdu example or a translation step reduces the loss. Anyone deploying such agents for Roman Urdu users should test them in Roman Urdu, with the spellings their users type.
 
-\section*{Acknowledgements}
-We thank Maryam Khalid, physiotherapist, for reviewing the benchmark items.
+\section*{Author contributions}
+M.\ Hussain designed the study, wrote the code, ran the experiments and wrote the paper. M.\ Khalid, a physiotherapist, reviewed the benchmark items.
 
 \section*{Competing interests}
-The reviewer is married to the author.
+The authors are married. M.\ Khalid took part in her own time.
 
 \section*{Data and code}
 Items, code, tests, every call with its full transcript, the pilot run and the clinician review sheet: \url{https://github.com/MHKhan50/roman-urdu-react-bench}, archived on Zenodo as version 1.0.0 (\href{https://doi.org/10.5281/zenodo.24044983}{doi:10.5281/zenodo.24044983}).
