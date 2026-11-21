@@ -40,6 +40,8 @@ We ask four questions. (1) Do small local agents answer clinic questions less ac
 
 \paragraph{Translating first.} Translate-test, translating the input into English and running an English system, can be strong when translation is good \citep{artetxe2023revisiting}. We test the cheap version available on a laptop: the same small model translates the question before running the English agent.
 
+Companion studies test small local models drafting physiotherapy notes from Roman Urdu consultations \citep{hussain2026soap} and measure how reliably they call tools across repeated trials \citep{hussain2026toolcall}.
+
 \section{Benchmark and method}
 \paragraph{Clinic and items.} A fictional physiotherapy clinic has six patients and three therapists. Twelve templates cover the operator words that caused errors in the pilot (Table~\ref{tab:templates}): sessions remaining (\emph{baqi}), pain drop (\emph{kam hua}), age after and before $N$ years (\emph{saal baad}, \emph{saal pehle}), combined and difference in experience (\emph{mila kar}, \emph{zyada}), total sessions of a therapist's patients (two hops, \emph{kul}), a therapist's specialty and clinic days, percentage completed, sessions left after two more (\emph{agar \dots baqi}) and which of two patients did more sessions. Each template has four instances, and each instance exists with two name sets that share every number, giving 96 items. Gold answers are computed from the records in code. Each item has three forms: English, Roman Urdu with common spelling and Roman Urdu with chat spelling (for example \emph{kitnay}, \emph{sal}, \emph{pehlay}, \emph{ziada}, \emph{milakar}).
 
