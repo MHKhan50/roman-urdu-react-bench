@@ -115,4 +115,6 @@ A physiotherapist checked the 48 items of name set A after the runs: all expecte
   note      = {Preprint}
 }
 ```
+
+Software (code, notebooks, results): [doi:10.5281/zenodo.24044983](https://doi.org/10.5281/zenodo.24044983).
 Software: [doi:10.5281/zenodo.24044983](https://doi.org/10.5281/zenodo.24044983); see also [`CITATION.cff`](CITATION.cff). Author: Muzammal Hussain ([ORCID 0009-0001-2570-5686](https://orcid.org/0009-0001-2570-5686)). Code: MIT licence.
