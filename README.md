@@ -118,3 +118,7 @@ A physiotherapist checked the 48 items of name set A after the runs: all expecte
 
 Software (code, notebooks, results): [doi:10.5281/zenodo.24044983](https://doi.org/10.5281/zenodo.24044983).
 Software: [doi:10.5281/zenodo.24044983](https://doi.org/10.5281/zenodo.24044983); see also [`CITATION.cff`](CITATION.cff). Author: Muzammal Hussain ([ORCID 0009-0001-2570-5686](https://orcid.org/0009-0001-2570-5686)). Code: MIT licence.
+
+## Data licence
+
+Data: CC BY 4.0 ([`DATA_LICENSE.txt`](DATA_LICENSE.txt)); the same licence is used on the Kaggle dataset. Code: MIT.
